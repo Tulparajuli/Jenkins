@@ -29,7 +29,7 @@ node('master') {
       //get key from sonarcloud
       //C:\Tools\SonarQube
       dir('JenkinsMVC'){
-        bat 'C:\Tools\SonarQube\SonarQube.Scanner.MSBuild.exe begin /k:winmvc'
+        bat 'C:\\Tools\\SonarQube\\SonarQube.Scanner.MSBuild.exe begin /k:winmvc'
        //bat 'dotnet build'
        bat 'msbuild /t:build JenkinsMVC.csproj'
         bat 'C:\\Tools\\SonarQube\\SonarQube.Scanner.MSBuild.exe end'
