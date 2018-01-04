@@ -30,7 +30,8 @@ node('master') {
       //C:\Tools\SonarQube
       dir('JenkinsMVC'){
         bat 'C:\Tools\SonarQube\SonarQube.Scanner.MSBuild.exe begin /k:winmvc'
-        bat 'dotnet build'
+       //bat 'dotnet build'
+       bat 'msbuild /t:build JenkinsMVC.csproj'
         bat 'C:\\Tools\\SonarQube\\SonarQube.Scanner.MSBuild.exe end'
       }
     } catch(error) {
