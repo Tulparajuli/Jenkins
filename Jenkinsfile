@@ -13,7 +13,8 @@ node('master') {
     try {
       //do build for msbuild
       dir('JenkinsMVC'){
-      bat 'nuget restore'
+      //bat 'nuget restore'
+      bat 'dotnet restore'
       bat 'msbuild /t:clean, build JenkinsMVC.csproj'
     }
     } catch(error) {
