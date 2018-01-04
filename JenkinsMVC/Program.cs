@@ -15,6 +15,7 @@ namespace JenkinsMVC
         public static void Main(string[] args)
         {
             BuildWebHost(args).Run();
+            //nothing to commit
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
