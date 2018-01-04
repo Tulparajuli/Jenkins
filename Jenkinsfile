@@ -11,7 +11,11 @@ node('master') {
 
   stage('build') {
     try {
-
+      //do build for msbuild
+      dir('JenkinsMVC'){
+      bat 'nuget restore'
+      bat 'msbuild /t:clean, build JenkinsMVC.csproj'
+    }
     } catch(error) {
       //slackSend message: color:'danger'
     }
