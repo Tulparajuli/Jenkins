@@ -26,7 +26,13 @@ node('master') {
 
   stage('analyze') {
     try {
-
+      //get key from sonarcloud
+      //C:\Tools\SonarQube
+      dir('JenkinsMVC'){
+        bat 'C:\Tools\SonarQube\SonarQube.Scanner.MSBuild.exe begin /k:winmvc'
+        bat 'dotnet build'
+        bat 'C:\\Tools\\SonarQube\\SonarQube.Scanner.MSBuild.exe end'
+      }
     } catch(error) {
       //slackSend message: color:'danger'
     }
