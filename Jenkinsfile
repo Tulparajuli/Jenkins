@@ -1,7 +1,7 @@
 node('master') {
   stage('import') {
     try {
-      git credentialsId: '5215a79d-f864-4294-97e9-fa1b217e8cab', url: 'https://github.com/Tulparajuli/Jenkins.git'
+      git credentialsId: 'github-jinkens', url: 'https://github.com/Tulparajuli/Jenkins.git'
     } catch(error) {
       //slackSend message:{env.BUILD_NUMBER} color:'danger'
     }
