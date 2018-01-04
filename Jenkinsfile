@@ -5,7 +5,7 @@ node('master') {
       git credentialsId: 'github-jinkens', url: 'https://github.com/Tulparajuli/Jenkins.git'
     } catch(error) {
       //slackSend message:{env.BUILD_NUMBER} color:'danger'
-      //
+      
     }
   }
 
