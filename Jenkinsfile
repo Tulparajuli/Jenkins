@@ -3,6 +3,7 @@ node('master') {
     try {
      slackSend "started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
       git credentialsId: 'github-jinkens', url: 'https://github.com/Tulparajuli/Jenkins.git'
+      //use credentialsid if private repo
     } catch(error) {
       //slackSend message:{env.BUILD_NUMBER} color:'danger'
       
@@ -13,6 +14,7 @@ node('master') {
     try {
       //do build for msbuild
       dir('JenkinsMVC'){
+        //this is for nuget if not solution there
       //bat 'nuget restore'
       bat 'dotnet restore'
       bat 'msbuild /t:clean, build JenkinsMVC.csproj'
