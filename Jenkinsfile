@@ -1,7 +1,7 @@
 node('master') {
   stage('import') {
     try {
-     // slackSend "started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+     slackSend "started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
       git credentialsId: 'github-jinkens', url: 'https://github.com/Tulparajuli/Jenkins.git'
     } catch(error) {
       //slackSend message:{env.BUILD_NUMBER} color:'danger'
