@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using JenkinsMVC.Models;
+using Newtonsoft.Json;
 
 namespace JenkinsMVC.Controllers
 {
@@ -12,6 +13,7 @@ namespace JenkinsMVC.Controllers
     {
         public IActionResult Index()
         {
+            var x = JsonConvert.SerializeObject("hello");
             return View();
         }
 
