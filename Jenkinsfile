@@ -69,7 +69,7 @@ node('master') {
   stage('deploy') {
     try {
          // dir('JenkinsMVC') {
-           bat 'dotnet build ./JenkinsMVC/JenkinsMVC.csproj /p:DeployOnBuild=true /p:PublishProfile=publish'
+          // bat 'dotnet build ./JenkinsMVC/JenkinsMVC.csproj /p:DeployOnBuild=true /p:PublishProfile=publish'
           bat '"C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:iisApp="C:\\Program Files (x86)\\Jenkins\\workspace\\jenkins-win\\Package" -dest:iisApp="Default Web Site/jenkins-win",computername=ec2-52-90-124-176.compute-1.amazonaws.com,username=Administrator,password=winPassword1  -enableRule:AppOffline'
      // }
     } catch(error) {
