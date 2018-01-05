@@ -58,8 +58,8 @@ node('master') {
      dir('JenkinsMVC') {
         //bat 'msbuild /t:package JenkinsMVC.csproj'
         //bat 'dotnet pack JenkinsMVC.csproj --output ../Package'
-        bat 'dotnet publish proj --output ../Package'
-        bat 'msbuild /t:pack proj'
+        bat 'dotnet publish JenkinsMVC.csproj --output ../Package'
+        bat 'msbuild /t:pack JenkinsMVC.csproj'
       }
     } catch(error) {
       //slackSend message: color:'danger'
