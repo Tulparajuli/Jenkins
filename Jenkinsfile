@@ -70,7 +70,7 @@ node('master') {
     try {
          // dir('JenkinsMVC') {
 
-       bat '"C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:iisApp="C:\\Program Files (x86)\\Jenkins\\workspace\\jenkins-win\\JenkinsMVC\\obj\\Debug\\netcoreapp2.0\\PubTmp\\Out" -dest:iisApp="Default Web Site/jenkins-win",computername=http://ec2-52-90-124-176.compute-1.amazonaws.com,username=Administrator,password=winPassword1  -enableRule:AppOffline'
+       bat '"C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:iisApp="C:\Program Files (x86)\Jenkins\workspace\jenkins-win\Package" -dest:iisApp="Default Web Site/jenkins-win",computername=http://ec2-52-90-124-176.compute-1.amazonaws.com,username=Administrator,password=winPassword1  -enableRule:AppOffline'
      // }
     } catch(error) {
       //slackSend message: color:'danger'
