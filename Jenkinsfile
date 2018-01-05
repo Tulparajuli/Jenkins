@@ -55,7 +55,9 @@ node('master') {
 
   stage('package') {
     try {
-
+     dir('JenkinsMVC') {
+        bat 'msbuild /t:package JenkinsMVC.csproj'
+      }
     } catch(error) {
       //slackSend message: color:'danger'
     }
