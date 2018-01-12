@@ -72,7 +72,7 @@ node('master') {
            bat 'dotnet build ./JenkinsMVC/JenkinsMVC.csproj /p:DeployOnBuild=true /p:PublishProfile=publish'
          // bat '"C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:iisApp="C:\\Program Files (x86)\\Jenkins\\workspace\\jenkinsops\\Package\\" -dest:iisApp="Default Web Site/jenkinsops",computerName=ec2-18-144-22-120.us-west-1.compute.amazonaws.com:8172/msdeploy.axd,username=Administrator,password="U.Oe(D%cldYlMrIzY=J-u8cO;zGS;pjr" -allowUntrusted -enableRule:AppOffline'
           // bat 'dotnet build ./JenkinsMVC/JenkinsMVC.csproj /p:DeployOnBuild=true /p:PublishProfile=publish'
-          bat '"C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:iisApp="C:\Program Files (x86)\Jenkins\workspace\jenkins-win\Package" -dest:iisApp="Default Web Site/jenkins-win",computername=ec2-52-90-124-176.compute-1.amazonaws.com:8172/msdeploy.axd?site=Default Web Site,username=Administrator,password=winPassword1 -allowUntrusted  -enableRule:AppOffline'
+          bat '"C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:iisApp="C:\\Program Files (x86)\\Jenkins\\workspace\\jenkins-win\\Package" -dest:iisApp="Default Web Site/jenkins-win",computername=https://ec2-52-90-124-176.compute-1.amazonaws.com:8172/msdeploy.axd?site=Default Web Site,username=Administrator,password=winPassword1 -allowUntrusted  -enableRule:AppOffline'
      // }
     } catch(error) {
       //slackSend message: color:'danger'
